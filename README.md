@@ -1,6 +1,8 @@
 # weathermap-for-observium
 Upgraded tobzsc version on my Ubuntu 16.04
 
+Tested with Observium release 17.9.0 (25th September 2017)
+
 1. Install GIT:
 
 ```

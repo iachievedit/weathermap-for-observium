@@ -15,17 +15,17 @@ if ($weathermap_dir = opendir('weathermap/maps/')) { //Open directory
 }
 sort($rendered_maps);
 
-$navbar['weathermap'] = array('icon' => 'oicon-map', 'title' => 'Weathermap');
+$navbar['weathermap'] = array('icon' => $config['icon']['mibs'], 'title' => 'Weathermap');
 
-$navbar['weathermap']['entries'][] = array('title' => 'All maps', 'url' => 'weathermap/maps/allmaps.php', 'icon' => 'oicon-globe');
+$navbar['weathermap']['entries'][] = array('title' => 'All maps', 'url' => 'weathermap/maps/allmaps.php', 'icon' => $config['icon']['globe']);
 
 foreach ($rendered_maps as $map_page => $map_name) {
-    $weathermap_menu[] = array('title' => $map_name, 'url' => 'weathermap/maps/' . $map_page, 'icon' => 'oicon-map');
+    $weathermap_menu[] = array('title' => $map_name, 'url' => 'weathermap/maps/' . $map_page, 'icon' => $config['icon']['mibs']);
 }
-$navbar['weathermap']['entries'][] = array('title' => 'Weathermaps', 'url' => generate_url(array('page' => 'weathermap')), 'icon' => 'oicon-map', 'entries' => $weathermap_menu);
+$navbar['weathermap']['entries'][] = array('title' => 'Weathermaps', 'url' => generate_url(array('page' => 'weathermap')), 'icon' => $config['icon']['mibs'], 'entries' => $weathermap_menu);
 
 if ($_SESSION['userlevel'] >= '10') {
-    $navbar['weathermap']['entries'][] = array('title' => 'Weathermap Editor', 'url' => 'weathermap/editor.php', 'icon' => 'oicon-gear');
+    $navbar['weathermap']['entries'][] = array('title' => 'Weathermap Editor', 'url' => 'weathermap/editor.php', 'icon' => $config['icon']['tools']);
 }
  
 ?>

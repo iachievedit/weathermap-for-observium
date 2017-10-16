@@ -279,7 +279,7 @@ if(mysqli_num_rows($result) > 0) {
 
 	print '</form><div class="listcontainer"><ul id="dslist">';
 
-	$query = "SELECT ports.port_id AS port_id, ports.port_label_short AS label, ports.ifAlias AS alias, ports.ifIndex AS ifIndex, ports.ifHighSpeed AS ifHighSpeed, devices.device_id AS device_id, devices.hostname AS hostname, devices.sysName AS device_name, devices.purpose FROM observium.ports LEFT JOIN devices ON ports.device_id=devices.device_id WHERE ports.ignore=0 AND ports.disabled=0 AND ports.deleted=0 AND devices.disabled=0";
+	$query = "SELECT ports.port_id AS port_id, ports.port_label_short AS label, ports.ifAlias AS alias, ports.ifIndex AS ifIndex, ports.ifHighSpeed AS ifHighSpeed, devices.device_id AS device_id, devices.hostname AS hostname, devices.sysName AS device_name, devices.purpose FROM ports LEFT JOIN devices ON ports.device_id=devices.device_id WHERE ports.ignore=0 AND ports.disabled=0 AND ports.deleted=0 AND devices.disabled=0";
 
 	if($host_id > 0) {
 		$query .= " AND devices.device_id='$host_id'";

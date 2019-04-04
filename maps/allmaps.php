@@ -76,7 +76,7 @@ if ($_SESSION['authenticated']) {
         function getFiles($val = '.') {
             $pngfiles = array();
 
-            if ($handle = opendir('..')) {
+            if ($handle = opendir('.')) {
                 $i = 0;
                 while (false !== ($entry = readdir($handle))) {
                     if (strpos($entry, '.png') !== false && strpos($entry, $val) !== false) {
@@ -104,7 +104,7 @@ if ($_SESSION['authenticated']) {
             foreach ($pngfiles as $pngfile) {
                 echo '<div class = "col-xs-6 col-sm-4 col-md-3 col-lg-2">
                              <a href = "weathermap/maps/'.$pngfile.'.html" class = "thumbnail">
-                             <img src = "weathermap/'.$pngfile.'.png" alt = "'.$pngfile.'.png">
+                             <img src = "weathermap/maps/'.$pngfile.'.png" alt = "'.$pngfile.'.png">
                              <span>'.$pngfile.'</span>
                              </a>
                           </div>';
@@ -118,7 +118,7 @@ if ($_SESSION['authenticated']) {
                 echo '
                 <div class = "col-xs-6 col-sm-4 col-md-3 col-lg-2">
                              <a href = "weathermap/maps/'.$pngfile.'.html" class = "thumbnail">
-                             <img src = "weathermap/'.$pngfile.'.png" alt = "'.$pngfile.'.png">
+                             <img src = "weathermap/maps/'.$pngfile.'.png" alt = "'.$pngfile.'.png">
                              <span>'.$pngfile.'</span>
                              </a>
                           </div>';

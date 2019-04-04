@@ -57,6 +57,19 @@ $con = mysqli_connect("localhost","obs_db_user","obs_db_password","obs_db");
 */1 * * * * root /opt/observium/html/weathermap/map-poller.php >> /dev/null 2>&1
 ```
 
+6a. (Optional) Alternative to map-poller.php:
+
+```
+If you have issues with map-poller.php, you can try this bash script. It is suggested to move it out of the webroot, but up to you 
+This file does the same thing as map-poller.php, but in bash 
+
+chmod +x /opt/observium/html/weathermap/gen-map.sh 
+
+Add the below to /etc/cron.d/observium
+# For Weathermap
+*/1 * * * * root /opt/observium/html/weathermap/gen-map.sh >> /dev/null 2>&1
+```
+
 7. You can use the navbar-custom.inc.php by putting it into /opt/observium/html/includes/.
 
 ```

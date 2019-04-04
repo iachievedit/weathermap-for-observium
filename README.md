@@ -2,6 +2,7 @@
 Upgraded tobzsc version on my Ubuntu 16.04
 
 Tested with Observium release 17.9.0 (25th September 2017)
+Tested with Observium release 18.9.9420 (5th September 2018) (CE) (CentOS 7)
 
 1. Install GIT:
 
@@ -9,6 +10,9 @@ Tested with Observium release 17.9.0 (25th September 2017)
 su -
 apt-get update
 apt-get install git
+
+For Redhat (Fedora / CentOS)
+yum install git
 ```
 
 2. Install the Weathermap in the /opt/observium/html folder and move the overlib.js file one level up:
@@ -25,6 +29,11 @@ mv /opt/observium/html/weathermap/overlib.js /opt/observium/html/overlib.js
 ```
 chown -R www-data:www-data configs/
 chown -R www-data:www-data maps/
+chmod +x map-poller.php
+
+For Redhat
+chown -R apache: configs/
+chown -R apache: maps/
 chmod +x map-poller.php
 ```
 

@@ -20,7 +20,7 @@ $navbar['weathermap'] = array('icon' => $config['icon']['mibs'], 'title' => 'Wea
 $navbar['weathermap']['entries'][] = array('title' => 'All maps', 'url' => 'weathermap/maps/allmaps.php', 'icon' => $config['icon']['globe']);
 
 foreach ($rendered_maps as $map_page => $map_name) {
-    $weathermap_menu[] = array('title' => $map_name, 'url' => 'weathermap/maps/' . $map_page, 'icon' => $config['icon']['mibs']);
+    $weathermap_menu[] = array('title' => $map_name, 'url' => 'weathermap/maps/' . $map_name, 'icon' => $config['icon']['mibs']);
 }
 $navbar['weathermap']['entries'][] = array('title' => 'Weathermaps', 'url' => generate_url(array('page' => 'weathermap')), 'icon' => $config['icon']['mibs'], 'entries' => $weathermap_menu);
 
